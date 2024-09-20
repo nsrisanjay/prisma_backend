@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+model flashcard {
+  id       Int      @id @default(autoincrement())
+  question String
+  answer   String
+  author   String
+  DOC      DateTime
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
